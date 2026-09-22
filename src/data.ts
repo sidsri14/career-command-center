@@ -297,8 +297,19 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     demoPort: 5174,
     techStack: ['Bilingual (PT-BR/EN)', 'Solana Playground', 'Certification Engine'],
     keyInnovation: 'Gamified Solana development curriculum with real-time in-browser code execution.'
+  },
+  {
+    id: 'blockchain-hack-poland',
+    title: 'WarsawCross & KrakówShield (Poland Hack)',
+    category: 'Solana DeFi',
+    prizePool: '$4,000 USDG',
+    githubUrl: 'https://github.com/sidsri14/blockchain-hack-poland',
+    demoPort: 5196,
+    techStack: ['Pyth NBP Oracle', 'Anchor Rust Zero-Copy', 'Bilingual EN/PL', 'React-TS'],
+    keyInnovation: 'Atomic 400ms EUR/USDG/PLN-S FX settlement corridor & ZK stealth contractor payroll.'
   }
 ]
+
 
 export const HACKATHON_OPPORTUNITIES: HackathonOpportunity[] = [
   {

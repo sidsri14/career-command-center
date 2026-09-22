@@ -93,7 +93,7 @@ export default function App() {
               <p className="text-xs text-slate-400 flex items-center gap-2">
                 <span>Siddharth Srivastava (@sidsri14)</span>
                 <span>•</span>
-                <span className="text-indigo-400 font-mono">22 Production Repos Live</span>
+                <span className="text-indigo-400 font-mono">23 Production Repos Live</span>
               </p>
             </div>
           </div>
@@ -106,7 +106,7 @@ export default function App() {
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg glass-card hover:bg-white/10 text-xs font-semibold text-white transition"
             >
               <Code2 className="w-3.5 h-3.5 text-indigo-400" />
-              <span>GitHub (96+ Repos)</span>
+              <span>GitHub (97+ Repos)</span>
               <ExternalLink className="w-3 h-3 opacity-70" />
             </a>
             <a
@@ -151,7 +151,7 @@ export default function App() {
                 <div className="text-xs text-slate-400 font-medium">ATS Compatibility Score</div>
               </div>
               <div className="glass-card p-3.5 rounded-xl text-center">
-                <div className="text-2xl font-extrabold text-sky-400">22 Repos</div>
+                <div className="text-2xl font-extrabold text-sky-400">23 Repos</div>
                 <div className="text-xs text-slate-400 font-medium">100% Live on GitHub</div>
               </div>
               <div className="glass-card p-3.5 rounded-xl text-center">
@@ -161,6 +161,7 @@ export default function App() {
             </div>
           </div>
         </div>
+
 
         {/* Tab Navigation */}
         <div className="flex border-b border-white/10 gap-2 mb-8 overflow-x-auto pb-2 scrollbar-none">
