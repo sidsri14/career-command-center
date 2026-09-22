@@ -1,32 +1,32 @@
-# React + TypeScript + Vite
+# Career & Hackathon Command Center
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+**Operational hub for the Web3 bounty/hackathon pipeline — 24 production-grade deliverables, 23 public repos, and a Tier-1 ATS resume (98.2/100).** One dashboard to run the full job-search + bounty portfolio as a system.
 
-Currently, two official plugins are available:
+## Tabs
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+| View | What it runs |
+|---|---|
+| **Target Companies** | Hiring intelligence on target employers (Anza/Solana Core, Helius, Pyth/Douro, Superteam Hubs) — roles, salary ranges, why-fit, mapped to the best portfolio project, and a pre-written founder/CTO outreach DM per company (copy-to-clipboard). |
+| **Outreach Studio** | Scratchpad for direct DMs to founders/CTOs backed by the public-repo proof. |
+| **Portfolio Gallery** | The 24-repo bounty portfolio rendered as a judgement-ready gallery. |
+| **Hackathons** | Active bounty pipeline with deadlines and prize pools (Superteam Earn + Colosseum). |
+| **Resume ATS** | The 1-page printable resume (`D:\bca\Siddharth_Srivastava_Resume.html`), ATS 98.2/100, with score breakdown. |
+| **Reflections** | Post-build reflections fed back into strategy. |
 
-## React Compiler
+## Strategy it encodes
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **Root cause:** cold Web2 applications faced 1,500+ generic applicants per role; resumes lacked niche systems keywords (Rust, Anchor, Solana SVM, ZK Compression).
+2. **Pivot:** a public 23-repo portfolio as the credibility layer + direct founder/CTO DMs on X & Telegram + this command center to coordinate it all.
 
-## Expanding the Oxlint configuration
+## Stack
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- React + TypeScript + Vite (Oxlint)
+- `lucide-react` icons
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+## Run it
+
+```bash
+pnpm install
+pnpm dev        # http://localhost:5195
+pnpm build
 ```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
