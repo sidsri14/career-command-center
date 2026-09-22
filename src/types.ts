@@ -33,3 +33,25 @@ export interface HackathonOpportunity {
   status: 'SUBMISSION_OPEN' | 'CLOSING_SOON' | 'ACTIVE_ACCELERATOR';
   deliverableMatch: string;
 }
+
+export interface CompanyReflection {
+  id: string;
+  companyName: string;
+  stage: 'Initial Rejection (Web2 Cold App)' | 'Technical Feedback / Pivot' | 'Warm DM Active Conversation' | 'Bounty Lead Evaluation';
+  whatHappened: string;
+  rootCauseAnalysis: string;
+  actionTaken: string;
+  counterStrategy: string;
+  followUpTemplate: string;
+  statusTag: 'PIVOTED_TO_WIN' | 'STRATEGY_EXECUTED' | 'ACTIVE_IN_CONVERSATION';
+}
+
+export interface InterviewQuestion {
+  id: string;
+  category: 'Anchor & Rust' | 'Solana SVM Internals' | 'DeFi & MEV' | 'ZK & Privacy';
+  question: string;
+  answer: string;
+  codeSnippet?: string;
+  keyTakeaway: string;
+}
+
