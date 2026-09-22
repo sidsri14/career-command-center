@@ -1,15 +1,15 @@
 import { useState } from 'react'
-import { 
-  Briefcase, 
-  Code2, 
-  Flame, 
-  FileText, 
-  Copy, 
-  Check, 
-  ExternalLink, 
-  Sparkles, 
-  Send, 
-  ShieldCheck, 
+import {
+  Briefcase,
+  Code2,
+  Flame,
+  FileText,
+  Copy,
+  Check,
+  ExternalLink,
+  Sparkles,
+  Send,
+  ShieldCheck,
   Layers,
   MessageSquare,
   AlertTriangle,
@@ -18,19 +18,15 @@ import {
   Terminal,
   ChevronDown,
   ChevronUp,
-  BrainCircuit,
-  Calendar,
-  Clock,
-  Zap,
-  Target
+  BrainCircuit
 } from 'lucide-react'
-
 import confetti from 'canvas-confetti'
-import { TARGET_COMPANIES, PORTFOLIO_PROJECTS, HACKATHON_OPPORTUNITIES, COMPANY_REFLECTIONS, INTERVIEW_QUESTIONS, TIMELINE_MILESTONES } from './data'
+import { TARGET_COMPANIES, PORTFOLIO_PROJECTS, HACKATHON_OPPORTUNITIES, COMPANY_REFLECTIONS, INTERVIEW_QUESTIONS } from './data'
 import { TargetCompany, CompanyReflection } from './types'
 
+
 export default function App() {
-  const [activeTab, setActiveTab] = useState<'target-companies' | 'reflections' | 'job-timeline' | 'portfolio-gallery' | 'hackathons' | 'resume-ats' | 'outreach-studio'>('target-companies')
+  const [activeTab, setActiveTab] = useState<'target-companies' | 'reflections' | 'portfolio-gallery' | 'hackathons' | 'resume-ats' | 'outreach-studio'>('target-companies')
   const [selectedCompany, setSelectedCompany] = useState<TargetCompany>(TARGET_COMPANIES[0])
   const [selectedReflection, setSelectedReflection] = useState<CompanyReflection>(COMPANY_REFLECTIONS[0])
   const [selectedCategory, setSelectedCategory] = useState<string>('ALL')
@@ -39,10 +35,6 @@ export default function App() {
   const [userRoleTarget, setUserRoleTarget] = useState<string>('Rust & Solana Systems Engineer')
   const [expandedQuestionId, setExpandedQuestionId] = useState<string | null>('q1')
   const [masteredQuestions, setMasteredQuestions] = useState<string[]>([])
-  const [completedActions, setCompletedActions] = useState<string[]>([
-    'Publish Poland Hack Warsaw & Kraków dossiers ($4,000 USDG) to Superteam Poland',
-    'Distribute 1-page printable resume (ATS Score: 98.2/100) to target company hiring portals'
-  ])
 
   const handleCopyText = (text: string, id: string) => {
     navigator.clipboard.writeText(text)
@@ -64,19 +56,6 @@ export default function App() {
         particleCount: 30,
         spread: 50,
         origin: { y: 0.85 }
-      })
-    }
-  }
-
-  const toggleAction = (actionText: string) => {
-    if (completedActions.includes(actionText)) {
-      setCompletedActions(completedActions.filter((a) => a !== actionText))
-    } else {
-      setCompletedActions([...completedActions, actionText])
-      confetti({
-        particleCount: 35,
-        spread: 55,
-        origin: { y: 0.75 }
       })
     }
   }
@@ -114,7 +93,7 @@ export default function App() {
               <p className="text-xs text-slate-400 flex items-center gap-2">
                 <span>Siddharth Srivastava (@sidsri14)</span>
                 <span>•</span>
-                <span className="text-indigo-400 font-mono">24 Production Repos Live</span>
+                <span className="text-indigo-400 font-mono">23 Production Repos Live</span>
               </p>
             </div>
           </div>
@@ -127,7 +106,7 @@ export default function App() {
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg glass-card hover:bg-white/10 text-xs font-semibold text-white transition"
             >
               <Code2 className="w-3.5 h-3.5 text-indigo-400" />
-              <span>GitHub (98+ Repos)</span>
+              <span>GitHub (97+ Repos)</span>
               <ExternalLink className="w-3 h-3 opacity-70" />
             </a>
             <a
@@ -164,7 +143,7 @@ export default function App() {
             {/* Quick Metrics */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
               <div className="glass-card p-3.5 rounded-xl text-center">
-                <div className="text-2xl font-extrabold text-indigo-400">$912,800+</div>
+                <div className="text-2xl font-extrabold text-indigo-400">$901,800+</div>
                 <div className="text-xs text-slate-400 font-medium">Active Prize Pipeline</div>
               </div>
               <div className="glass-card p-3.5 rounded-xl text-center">
@@ -172,7 +151,7 @@ export default function App() {
                 <div className="text-xs text-slate-400 font-medium">ATS Compatibility Score</div>
               </div>
               <div className="glass-card p-3.5 rounded-xl text-center">
-                <div className="text-2xl font-extrabold text-sky-400">24 Repos</div>
+                <div className="text-2xl font-extrabold text-sky-400">23 Repos</div>
                 <div className="text-xs text-slate-400 font-medium">100% Live on GitHub</div>
               </div>
               <div className="glass-card p-3.5 rounded-xl text-center">
@@ -183,39 +162,26 @@ export default function App() {
           </div>
         </div>
 
+
         {/* Tab Navigation */}
         <div className="flex border-b border-white/10 gap-2 mb-8 overflow-x-auto pb-2 scrollbar-none">
           <button
             onClick={() => setActiveTab('target-companies')}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition whitespace-nowrap ${
-              activeTab === 'target-companies' 
-                ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20' 
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition whitespace-nowrap ${activeTab === 'target-companies'
+                ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20'
                 : 'glass-card text-slate-400 hover:text-white hover:bg-white/5'
-            }`}
+              }`}
           >
             <Briefcase className="w-4 h-4" />
             <span>Target Companies ($140k–$240k)</span>
           </button>
 
           <button
-            onClick={() => setActiveTab('job-timeline')}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition whitespace-nowrap ${
-              activeTab === 'job-timeline' 
-                ? 'bg-amber-600 text-white shadow-lg shadow-amber-600/20' 
-                : 'glass-card text-slate-400 hover:text-white hover:bg-white/5'
-            }`}
-          >
-            <Clock className="w-4 h-4 text-amber-300" />
-            <span>Job & Revenue Timeline (Days 1–30)</span>
-          </button>
-
-          <button
             onClick={() => setActiveTab('reflections')}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition whitespace-nowrap ${
-              activeTab === 'reflections' 
-                ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20' 
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition whitespace-nowrap ${activeTab === 'reflections'
+                ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20'
                 : 'glass-card text-slate-400 hover:text-white hover:bg-white/5'
-            }`}
+              }`}
           >
             <MessageSquare className="w-4 h-4 text-amber-400" />
             <span>Company Reflections & Screener</span>
@@ -223,35 +189,32 @@ export default function App() {
 
           <button
             onClick={() => setActiveTab('portfolio-gallery')}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition whitespace-nowrap ${
-              activeTab === 'portfolio-gallery' 
-                ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20' 
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition whitespace-nowrap ${activeTab === 'portfolio-gallery'
+                ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20'
                 : 'glass-card text-slate-400 hover:text-white hover:bg-white/5'
-            }`}
+              }`}
           >
             <Layers className="w-4 h-4" />
-            <span>24-Repo Proof of Work</span>
+            <span>22-Repo Proof of Work</span>
           </button>
 
           <button
             onClick={() => setActiveTab('hackathons')}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition whitespace-nowrap ${
-              activeTab === 'hackathons' 
-                ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20' 
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition whitespace-nowrap ${activeTab === 'hackathons'
+                ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20'
                 : 'glass-card text-slate-400 hover:text-white hover:bg-white/5'
-            }`}
+              }`}
           >
             <Flame className="w-4 h-4 text-rose-400" />
-            <span>Hackathon & Bounty Radar ($912K)</span>
+            <span>Hackathon & Bounty Radar ($901K)</span>
           </button>
 
           <button
             onClick={() => setActiveTab('resume-ats')}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition whitespace-nowrap ${
-              activeTab === 'resume-ats' 
-                ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20' 
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition whitespace-nowrap ${activeTab === 'resume-ats'
+                ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20'
                 : 'glass-card text-slate-400 hover:text-white hover:bg-white/5'
-            }`}
+              }`}
           >
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
             <span>ATS Resume Terminal</span>
@@ -259,11 +222,10 @@ export default function App() {
 
           <button
             onClick={() => setActiveTab('outreach-studio')}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition whitespace-nowrap ${
-              activeTab === 'outreach-studio' 
-                ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20' 
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition whitespace-nowrap ${activeTab === 'outreach-studio'
+                ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20'
                 : 'glass-card text-slate-400 hover:text-white hover:bg-white/5'
-            }`}
+              }`}
           >
             <Send className="w-4 h-4" />
             <span>Founder DM Studio</span>
@@ -280,11 +242,10 @@ export default function App() {
                 <div
                   key={company.id}
                   onClick={() => setSelectedCompany(company)}
-                  className={`p-5 rounded-2xl cursor-pointer transition border ${
-                    selectedCompany.id === company.id
+                  className={`p-5 rounded-2xl cursor-pointer transition border ${selectedCompany.id === company.id
                       ? 'bg-white/10 border-indigo-500 shadow-lg shadow-indigo-500/10'
                       : 'glass-panel border-white/5 hover:bg-white/5'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-3">
@@ -294,11 +255,10 @@ export default function App() {
                         <span className="text-xs text-slate-400">{company.category}</span>
                       </div>
                     </div>
-                    <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${
-                      company.hiringStatus === 'URGENT_HIRING'
+                    <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${company.hiringStatus === 'URGENT_HIRING'
                         ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
                         : 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
-                    }`}>
+                      }`}>
                       {company.hiringStatus.replace('_', ' ')}
                     </span>
                   </div>
@@ -376,155 +336,7 @@ export default function App() {
           </div>
         )}
 
-        {/* TAB 2: Job & Revenue Timeline Roadmap */}
-        {activeTab === 'job-timeline' && (
-          <div className="space-y-8">
-            {/* Direct Answer Banner */}
-            <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-amber-500/30 bg-amber-950/20 space-y-4">
-              <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-4">
-                <div>
-                  <h3 className="text-2xl font-black text-white flex items-center gap-2">
-                    <Clock className="w-6 h-6 text-amber-400" />
-                    When Am I Getting a Job & Cashflow? The 30-Day Blueprint
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-300">
-                    Direct timeline based on your 24 public GitHub repos, 98.2 ATS resume, and active $912,800 pipeline.
-                  </p>
-                </div>
-                <div className="text-right">
-                  <div className="text-xs text-slate-400">Total Pipeline Velocity</div>
-                  <div className="text-2xl font-black text-emerald-400 font-mono">$160k–$240k / yr</div>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 pt-2">
-                <div className="glass-card p-4 rounded-2xl border-l-4 border-l-amber-500">
-                  <div className="text-xs text-slate-400 uppercase font-bold">Week 1 (Days 1–7)</div>
-                  <div className="text-xl font-black text-white mt-1">$2.5k–$6k Cash</div>
-                  <p className="text-[11px] text-slate-300 mt-1">First bounty payouts & 3–5 founder DM replies on X/Telegram.</p>
-                </div>
-
-                <div className="glass-card p-4 rounded-2xl border-l-4 border-l-indigo-500">
-                  <div className="text-xs text-slate-400 uppercase font-bold">Week 2 (Days 8–14)</div>
-                  <div className="text-xl font-black text-white mt-1">Interviews & Trials</div>
-                  <p className="text-[11px] text-slate-300 mt-1">1–2 live technical screens on Anchor zero-copy & paid contractor scopes.</p>
-                </div>
-
-                <div className="glass-card p-4 rounded-2xl border-l-4 border-l-purple-500">
-                  <div className="text-xs text-slate-400 uppercase font-bold">Week 3 (Days 15–21)</div>
-                  <div className="text-xl font-black text-white mt-1">Colosseum Judging</div>
-                  <p className="text-[11px] text-slate-300 mt-1">Colosseum $840k + Poland $4k judging results & accelerator partner calls.</p>
-                </div>
-
-                <div className="glass-card p-4 rounded-2xl border-l-4 border-l-emerald-500">
-                  <div className="text-xs text-slate-400 uppercase font-bold">Week 4 (Days 22–30)</div>
-                  <div className="text-xl font-black text-white mt-1">Signed Offer Letter</div>
-                  <p className="text-[11px] text-slate-300 mt-1">$140k–$240k USD remote offer accepted or $250k seed funding secured.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Detailed Milestones & Action Checklist */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {TIMELINE_MILESTONES.map((milestone) => (
-                <div key={milestone.id} className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 space-y-5 flex flex-col justify-between">
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                      <div>
-                        <span className="text-xs font-bold text-amber-400 uppercase">{milestone.week} • {milestone.timeframe}</span>
-                        <h4 className="text-lg font-black text-white mt-0.5">{milestone.phaseTitle}</h4>
-                      </div>
-                      <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
-                        {milestone.status.replace(/_/g, ' ')}
-                      </span>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-3 text-xs">
-                      <div className="glass-card p-3 rounded-xl">
-                        <span className="text-slate-400 block">Target Cashflow:</span>
-                        <strong className="text-emerald-400 font-mono">{milestone.targetRevenue}</strong>
-                      </div>
-                      <div className="glass-card p-3 rounded-xl">
-                        <span className="text-slate-400 block">Primary Focus:</span>
-                        <strong className="text-white">{milestone.focusArea}</strong>
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <div className="text-xs font-bold text-slate-400 uppercase">Key Execution Checklist:</div>
-                      <div className="space-y-2">
-                        {milestone.actions.map((action, idx) => {
-                          const isDone = completedActions.includes(action)
-                          return (
-                            <div
-                              key={idx}
-                              onClick={() => toggleAction(action)}
-                              className={`p-3 rounded-xl text-xs flex items-start gap-2.5 cursor-pointer transition ${
-                                isDone 
-                                  ? 'bg-emerald-950/30 border border-emerald-500/30 text-emerald-200' 
-                                  : 'glass-card hover:bg-white/5 text-slate-300'
-                              }`}
-                            >
-                              <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center shrink-0 border ${
-                                isDone ? 'bg-emerald-500 border-emerald-400 text-slate-950' : 'border-white/30'
-                              }`}>
-                                {isDone && <Check className="w-3 h-3 stroke-[3]" />}
-                              </div>
-                              <span className={isDone ? 'line-through opacity-80' : ''}>{action}</span>
-                            </div>
-                          )
-                        })}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="pt-4 border-t border-white/5 text-xs text-slate-400">
-                    <strong className="text-amber-300">Expected Deliverable Outcome:</strong> {milestone.expectedOutcome}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Daily Execution Routine */}
-            <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 space-y-4">
-              <h4 className="text-base font-bold text-white flex items-center gap-2">
-                <Calendar className="w-5 h-5 text-indigo-400" />
-                Daily Winning Routine (Morning / Afternoon / Evening)
-              </h4>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-                <div className="glass-card p-4 rounded-2xl space-y-1.5">
-                  <div className="font-bold text-amber-400 flex items-center gap-1.5">
-                    <Zap className="w-4 h-4" /> Morning (9 AM – 12 PM)
-                  </div>
-                  <p className="text-slate-300">
-                    Send 5 personalized founder DMs using Tab 6 (Anza, Helius, Pyth, Superteam). Check Superteam Earn wallet for incoming bounty payouts.
-                  </p>
-                </div>
-
-                <div className="glass-card p-4 rounded-2xl space-y-1.5">
-                  <div className="font-bold text-indigo-400 flex items-center gap-1.5">
-                    <Code2 className="w-4 h-4" /> Afternoon (1 PM – 5 PM)
-                  </div>
-                  <p className="text-slate-300">
-                    Complete and submit next hackathon track (Poland Warsaw/Kraków or Colosseum Video pitch). Commit code to GitHub to maintain green commit streaks.
-                  </p>
-                </div>
-
-                <div className="glass-card p-4 rounded-2xl space-y-1.5">
-                  <div className="font-bold text-emerald-400 flex items-center gap-1.5">
-                    <Target className="w-4 h-4" /> Evening (6 PM – 8 PM)
-                  </div>
-                  <p className="text-slate-300">
-                    Practice 2 technical screener flashcards in Tab 3. Follow up on active recruiter/CTO conversations on Telegram.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* TAB 3: Company Reflections & Screener */}
+        {/* TAB 2: Company Reflections & Screener */}
         {activeTab === 'reflections' && (
           <div className="space-y-8">
             {/* 3-Month Diagnostic Funnel */}
@@ -560,7 +372,7 @@ export default function App() {
                     <span>Phase 2: The Core Systems Pivot</span>
                   </div>
                   <p className="text-xs text-slate-300 leading-relaxed">
-                    Overhauled resume to "Rust, Solana SVM & AI Systems Engineer" (98.2 ATS score). Built 24 public GitHub repos demonstrating deep memory safety and zero-copy Anchor accounts.
+                    Overhauled resume to "Rust, Solana SVM & AI Systems Engineer" (98.2 ATS score). Built 22 public GitHub repos demonstrating deep memory safety and zero-copy Anchor accounts.
                   </p>
                   <div className="text-[11px] text-amber-300/80 font-mono">Unlock: 10x higher demand-to-supply ratio</div>
                 </div>
@@ -571,7 +383,7 @@ export default function App() {
                     <span>Phase 3: Direct DM & Bounties (Current)</span>
                   </div>
                   <p className="text-xs text-slate-300 leading-relaxed">
-                    Submitting to $912K+ Superteam & Colosseum prize tracks while sending warm DMs with live ports to engineering leads at Anza, Helius, Pyth, and Superteam.
+                    Submitting to $901K+ Superteam & Colosseum prize tracks while sending warm DMs with live ports to engineering leads at Anza, Helius, Pyth, and Superteam.
                   </p>
                   <div className="text-[11px] text-emerald-300/80 font-mono">Target: $5k-$15k/mo bounties + $160k-$240k offer</div>
                 </div>
@@ -587,19 +399,17 @@ export default function App() {
                   <div
                     key={refl.id}
                     onClick={() => setSelectedReflection(refl)}
-                    className={`p-5 rounded-2xl cursor-pointer transition border ${
-                      selectedReflection.id === refl.id
+                    className={`p-5 rounded-2xl cursor-pointer transition border ${selectedReflection.id === refl.id
                         ? 'bg-white/10 border-amber-500 shadow-lg shadow-amber-500/10'
                         : 'glass-panel border-white/5 hover:bg-white/5'
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center justify-between mb-2">
                       <h5 className="font-bold text-white text-sm">{refl.companyName}</h5>
-                      <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${
-                        refl.statusTag === 'PIVOTED_TO_WIN'
+                      <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${refl.statusTag === 'PIVOTED_TO_WIN'
                           ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
                           : 'bg-indigo-500/20 text-indigo-300 border border-indigo-500/30'
-                      }`}>
+                        }`}>
                         {refl.statusTag.replace(/_/g, ' ')}
                       </span>
                     </div>
@@ -699,11 +509,10 @@ export default function App() {
                               e.stopPropagation()
                               toggleMastered(q.id)
                             }}
-                            className={`w-6 h-6 rounded-lg flex items-center justify-center border transition ${
-                              isMastered 
-                                ? 'bg-emerald-500 border-emerald-400 text-slate-950' 
+                            className={`w-6 h-6 rounded-lg flex items-center justify-center border transition ${isMastered
+                                ? 'bg-emerald-500 border-emerald-400 text-slate-950'
                                 : 'border-white/20 hover:border-white/40 text-transparent'
-                            }`}
+                              }`}
                           >
                             <Check className="w-4 h-4 stroke-[3]" />
                           </button>
@@ -745,7 +554,7 @@ export default function App() {
           </div>
         )}
 
-        {/* TAB 4: 24-Repo Proof of Work */}
+        {/* TAB 3: 22-Repo Proof of Work */}
         {activeTab === 'portfolio-gallery' && (
           <div className="space-y-6">
             {/* Filter Buttons */}
@@ -754,11 +563,10 @@ export default function App() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition ${
-                    selectedCategory === cat
+                  className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition ${selectedCategory === cat
                       ? 'bg-indigo-600 text-white shadow-md'
                       : 'glass-card text-slate-400 hover:text-white'
-                  }`}
+                    }`}
                 >
                   {cat}
                 </button>
@@ -821,14 +629,14 @@ export default function App() {
           </div>
         )}
 
-        {/* TAB 5: Hackathon Radar */}
+        {/* TAB 4: Hackathon Radar */}
         {activeTab === 'hackathons' && (
           <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 space-y-6">
             <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-4">
               <div>
                 <h3 className="text-xl font-bold text-white flex items-center gap-2">
                   <Flame className="w-5 h-5 text-rose-500" />
-                  Active Hackathons & Bounties Pipeline: $912,800+ USD
+                  Active Hackathons & Bounties Pipeline: $901,800+ USD
                 </h3>
                 <p className="text-xs text-slate-400">All deliverables mapped to working public repositories and live preview ports.</p>
               </div>
@@ -867,7 +675,7 @@ export default function App() {
           </div>
         )}
 
-        {/* TAB 6: Resume ATS */}
+        {/* TAB 5: Resume ATS */}
         {activeTab === 'resume-ats' && (
           <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 space-y-6">
             <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-4">
@@ -917,7 +725,7 @@ export default function App() {
           </div>
         )}
 
-        {/* TAB 7: Outreach Studio */}
+        {/* TAB 6: Outreach Studio */}
         {activeTab === 'outreach-studio' && (
           <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 space-y-6">
             <div className="border-b border-white/10 pb-4">
@@ -954,7 +762,7 @@ export default function App() {
               <div className="flex items-center justify-between">
                 <span className="text-xs font-bold text-white">Cold Twitter/X & Telegram DM Template:</span>
                 <button
-                  onClick={() => handleCopyText(`Hey ${founderName || '[Name]'}, saw you're expanding engineering at [Company]. I'm a ${userRoleTarget} with 24 production repos on GitHub (github.com/sidsri14). Recently built SolCredit (Anchor lending protocol with on-chain risk scoring for the Colosseum $840K World's Fair) and Solana StealthShield (ZK Curve25519 stealth transfers). Would love to contribute to your core infrastructure. Here's my 1-page resume: [Resume Link]. Open for a quick technical chat this week?`, 'cold-dm')}
+                  onClick={() => handleCopyText(`Hey ${founderName || '[Name]'}, saw you're expanding engineering at [Company]. I'm a ${userRoleTarget} with 22 production repos on GitHub (github.com/sidsri14). Recently built SolCredit (Anchor lending protocol with on-chain risk scoring for the Colosseum $840K World's Fair) and Solana StealthShield (ZK Curve25519 stealth transfers). Would love to contribute to your core infrastructure. Here's my 1-page resume: [Resume Link]. Open for a quick technical chat this week?`, 'cold-dm')}
                   className="px-3 py-1 rounded-lg brand-gradient text-xs font-bold text-white shadow-md flex items-center gap-1.5"
                 >
                   <Copy className="w-3.5 h-3.5" />
@@ -963,7 +771,7 @@ export default function App() {
               </div>
 
               <pre className="p-4 rounded-xl bg-slate-900/90 text-xs text-slate-200 font-mono whitespace-pre-wrap leading-relaxed">
-{`Hey ${founderName || '[Name]'}, saw you're expanding engineering at [Company]. I'm a ${userRoleTarget} with 24 production repos on GitHub (github.com/sidsri14). Recently built SolCredit (Anchor lending protocol with on-chain risk scoring for the Colosseum $840K World's Fair) and Solana StealthShield (ZK Curve25519 stealth transfers). Would love to contribute to your core infrastructure. Here's my 1-page resume: [Resume Link]. Open for a quick technical chat this week?`}
+                {`Hey ${founderName || '[Name]'}, saw you're expanding engineering at [Company]. I'm a ${userRoleTarget} with 22 production repos on GitHub (github.com/sidsri14). Recently built SolCredit (Anchor lending protocol with on-chain risk scoring for the Colosseum $840K World's Fair) and Solana StealthShield (ZK Curve25519 stealth transfers). Would love to contribute to your core infrastructure. Here's my 1-page resume: [Resume Link]. Open for a quick technical chat this week?`}
               </pre>
             </div>
           </div>

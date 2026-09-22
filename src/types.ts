@@ -55,16 +55,3 @@ export interface InterviewQuestion {
   keyTakeaway: string;
 }
 
-export interface TimelineMilestone {
-  id: string;
-  week: string;
-  timeframe: string;
-  phaseTitle: string;
-  targetRevenue: string;
-  focusArea: string;
-  actions: string[];
-  expectedOutcome: string;
-  status: 'READY_TO_EXECUTE' | 'IN_PROGRESS' | 'COMPLETED';
-}
-
-
