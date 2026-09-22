@@ -1,4 +1,4 @@
-import { TargetCompany, PortfolioProject, HackathonOpportunity, CompanyReflection, InterviewQuestion } from './types'
+import { TargetCompany, PortfolioProject, HackathonOpportunity, CompanyReflection, InterviewQuestion, TimelineMilestone } from './types'
 
 export const TARGET_COMPANIES: TargetCompany[] = [
   {
@@ -432,4 +432,72 @@ export const HACKATHON_OPPORTUNITIES: HackathonOpportunity[] = [
     deliverableMatch: 'IdeaForge UA & SolCredit Pitch'
   }
 ]
+
+export const TIMELINE_MILESTONES: TimelineMilestone[] = [
+  {
+    id: 'week-1',
+    week: 'Week 1 (Days 1–7)',
+    timeframe: 'Late Sept / Early Oct 2026',
+    phaseTitle: 'Bounty Cashflow Submissions & Direct Founder Outreach',
+    targetRevenue: '$2,500 – $6,000 USD (Bounty Payouts)',
+    focusArea: 'Immediate Liquidity & Inbound Recruiter Interest',
+    actions: [
+      'Submit NectarFi x Dominion ($1,000 USDG) & Hisa Video Explainer ($5,002 USDG)',
+      'Send direct outreach DMs to leads at Anza, Helius Labs, and Pyth Network via X/Telegram',
+      'Publish Poland Hack Warsaw & Kraków dossiers ($4,000 USDG) to Superteam Poland',
+      'Distribute 1-page printable resume (ATS Score: 98.2/100) to target company hiring portals'
+    ],
+    expectedOutcome: '3–5 high-signal recruiter / founder replies + early bounty judging victories directly deposited to wallet.',
+    status: 'IN_PROGRESS'
+  },
+  {
+    id: 'week-2',
+    week: 'Week 2 (Days 8–14)',
+    timeframe: 'October 1–7, 2026',
+    phaseTitle: 'Technical Screener Interviews & Paid Trial Scopes',
+    targetRevenue: '$5,000 – $10,000 USD (Contractor Retainer / Trial Paid Scope)',
+    focusArea: 'Live Technical Screeners & Anchor Architecture Defense',
+    actions: [
+      'Execute technical screeners using the Interactive Screener Simulator (Anchor Zero-Copy, Reentrancy, Jito MEV)',
+      'Deliver take-home Rust test or live pair programming session with company CTO / Principal',
+      'Submit Colosseum Show Us What You Got ($1,500 USDG) & Steve Agent Arena ($500 USDC)',
+      'Receive first batch of Superteam bounty payout confirmations'
+    ],
+    expectedOutcome: 'Advanced to final round or hired for 2-4 week paid contractor trial ($150–$250/hr).',
+    status: 'READY_TO_EXECUTE'
+  },
+  {
+    id: 'week-3',
+    week: 'Week 3 (Days 15–21)',
+    timeframe: 'October 8–15, 2026',
+    phaseTitle: 'Colosseum Accelerator Selection & Poland Hackathon Judging',
+    targetRevenue: '$15,000 – $250,000 USD (Hackathon Grand Prizes & Pre-Seed)',
+    focusArea: 'Colosseum Crypto World\'s Fair & European Regional Tracks',
+    actions: [
+      'Final submission of SolCredit Protocol for the $840,000 Colosseum Crypto World\'s Fair',
+      'Present live demo at Warsaw & Kraków Hackathon Demo Days ($4,000 USDG)',
+      'Conduct accelerator partner interview with Colosseum investment committee ($250k check)',
+      'Pitch IdeaForge UA and SolCredit at Kyiv & Online Demo Days ($2,500 USDG)'
+    ],
+    expectedOutcome: 'Major hackathon placement announcement + Colosseum accelerator term sheet or VC introductions.',
+    status: 'READY_TO_EXECUTE'
+  },
+  {
+    id: 'week-4',
+    week: 'Week 4 (Days 22–30)',
+    timeframe: 'Late October 2026',
+    phaseTitle: 'Full-Time Offer Negotiation & Onboarding',
+    targetRevenue: '$140,000 – $240,000 USD / Year (Remote Full-Time Offer)',
+    focusArea: 'Salary Negotiation, Token Grants, and Contract Finalization',
+    actions: [
+      'Negotiate base salary ($160k–$240k band), token allocation, and remote equipment stipend',
+      'Review IP clauses, milestone vesting schedules, and international contractor agreements (Deel / Remote.com)',
+      'Accept top offer or commence funded accelerator batch for SolCredit Protocol',
+      'Transition bounty earnings into self-custody treasury'
+    ],
+    expectedOutcome: 'Signed offer letter as Rust, Solana SVM & AI Systems Engineer or funded startup founder.',
+    status: 'READY_TO_EXECUTE'
+  }
+]
+
 
