@@ -307,8 +307,19 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     demoPort: 5196,
     techStack: ['Pyth NBP Oracle', 'Anchor Rust Zero-Copy', 'Bilingual EN/PL', 'React-TS'],
     keyInnovation: 'Atomic 400ms EUR/USDG/PLN-S FX settlement corridor & ZK stealth contractor payroll.'
+  },
+  {
+    id: 'colosseum-builders-reflect',
+    title: 'Colosseum Builder Chronicle & Pitch Suite',
+    category: 'Creator Economy',
+    prizePool: '$11,000 USDG / USDC',
+    githubUrl: 'https://github.com/sidsri14/colosseum-builders-reflect',
+    demoPort: 5197,
+    techStack: ['Teleprompter Engine', 'ROI Calculator', 'Multi-Region Bounties', 'React-TS'],
+    keyInnovation: 'Multi-regional Colosseum campaign hub consolidating Vietnam, Netherlands, Nepal, and Germany bounties.'
   }
 ]
+
 
 
 export const HACKATHON_OPPORTUNITIES: HackathonOpportunity[] = [
