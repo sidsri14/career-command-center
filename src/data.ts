@@ -58,6 +58,76 @@ export const TARGET_COMPANIES: TargetCompany[] = [
     hiringStatus: 'HIRING_BOUNTY_LEADS'
   },
   {
+    id: 'ihsan-payments',
+    name: 'Ihsan — Non-Custodial Payments',
+    logo: '💳',
+    category: 'Solana Payments & DeFi',
+    rolesHiring: ['Founding Senior Payments Engineer ($160k–$280k/yr)'],
+    salaryRange: '$160,000 – $280,000 USD / year',
+    location: 'Remote (Global)',
+    whyFit: 'Engineered non-custodial agentic spend rails (Z-Spend) and mobile wallet adapters with legacy byte-exact transaction generation (Selene).',
+    recommendedProject: 'Z-Spend Agentic Rails & Selene Mobile Wallet',
+    outreachDM: `Hi Ihsan Hiring Team, I specialize in non-custodial Solana payment infrastructure and gasless transactions. Built Z-Spend (github.com/sidsri14/tempo-zspend) and Selene (github.com/sidsri14/clockin-selene-wallet). I would love to engineer Ihsan's global embedded Solana payment rails!`,
+    careersUrl: 'https://web3.career/i/zMjN0UTM',
+    hiringStatus: 'URGENT_HIRING'
+  },
+  {
+    id: 'offchain-labs',
+    name: 'Offchain Labs (Arbitrum Core)',
+    logo: '🧱',
+    category: 'Distributed Systems & Scaling',
+    rolesHiring: ['Senior Backend Engineer ($193k–$291k/yr)'],
+    salaryRange: '$193,000 – $291,000 USD / year',
+    location: 'Remote (Global)',
+    whyFit: 'High-throughput multi-threaded proxy engines (StackIntercept) and AST static analysis compiler tooling (SolSentinel).',
+    recommendedProject: 'StackIntercept AI Gateway & SolSentinel',
+    outreachDM: `Dear Offchain Labs Team, I build resilient distributed systems, low-latency microservices, and cryptographic verifiers. Built multi-threaded proxy engines (github.com/sidsri14/stack-intercept) and SolSentinel AST analyzer (github.com/sidsri14/solsentinel). Excited to scale core infrastructure!`,
+    careersUrl: 'https://web3.career/i/zgTN0UTM',
+    hiringStatus: 'URGENT_HIRING'
+  },
+  {
+    id: 'solana-foundation',
+    name: 'Solana Foundation (Frontier Traders)',
+    logo: '⚡',
+    category: 'L1 Foundation & Core',
+    rolesHiring: ['Lead Engineer, Frontier Traders'],
+    salaryRange: '$150,000 – $230,000 USD',
+    location: 'Remote (Global)',
+    whyFit: 'DEX event parsing, Pyth on-chain push feeds, Jupiter flashloans, and volume attribution math (EquityCurve & JupVanguard).',
+    recommendedProject: 'EquityCurve & JupVanguard Arbitrage Engine',
+    outreachDM: `Dear Solana Foundation Team, I specialize in low-latency DEX event parsing, Pyth on-chain push feeds, and high-throughput volume aggregation. Built EquityCurve (github.com/sidsri14/equitycurve) and JupVanguard. Would love to lead the frontier trader infrastructure!`,
+    careersUrl: 'https://jobs.solana.com/companies/solana-foundation-2/jobs/94445491-lead-engineer-frontier-traders',
+    hiringStatus: 'URGENT_HIRING'
+  },
+  {
+    id: 'deriverse-protocol',
+    name: 'Deriverse (Perpetuals & Order Books)',
+    logo: '🏛️',
+    category: 'DeFi Protocol',
+    rolesHiring: ['Senior Rust Protocol Engineer'],
+    salaryRange: '$140,000 – $210,000 USD',
+    location: 'Remote (Global)',
+    whyFit: 'Zero-copy Native Rust (no Anchor/low-level BPF), dynamic heap minimization, and compute unit optimization.',
+    recommendedProject: 'On-Chain Rate Limiter & SolCredit Protocol',
+    outreachDM: `Hi Deriverse Team, I build low-level Solana programs using zero-copy account layouts, raw byte serialization, and minimal compute unit profiles. Open-sourced sub-10k CU rate limiters (github.com/sidsri14/solana-onchain-rate-limiter). Eager to contribute to your on-chain derivatives engine!`,
+    careersUrl: 'https://jobs.solana.com/companies/deriverse/jobs/42642254-senior-rust-protocol-engineer',
+    hiringStatus: 'URGENT_HIRING'
+  },
+  {
+    id: 'syndica-infra',
+    name: 'Syndica (RPC & Cloud Infra)',
+    logo: '🛰️',
+    category: 'AI & Infrastructure',
+    rolesHiring: ['Senior Software Engineer (Zig/Rust)'],
+    salaryRange: '$140,000 – $200,000 USD',
+    location: 'Remote (Global)',
+    whyFit: 'High-throughput Rust proxying, RPC account deserialization, and telemetry indexing (StackIntercept & SolPulse).',
+    recommendedProject: 'StackIntercept AI Gateway & SolPulse Dashboard',
+    outreachDM: `Dear Syndica Team, I build high-concurrency systems, RPC account deserialization proxies, and telemetry tooling. Built StackIntercept (github.com/sidsri14/stack-intercept) and SolPulse. Would love to help engineer next-gen Solana RPC infrastructure!`,
+    careersUrl: 'https://jobs.solana.com/companies/syndica/jobs/27813708-senior-software-engineer-zig-rust',
+    hiringStatus: 'URGENT_HIRING'
+  },
+  {
     id: 'dialect-labs',
     name: 'Dialect (Blinks & Actions)',
     logo: '⚡',
@@ -312,6 +382,33 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
 
 
 export const HACKATHON_OPPORTUNITIES: HackathonOpportunity[] = [
+  {
+    id: 'breakpoint-tokenization',
+    name: 'Explain Tokenization Supercycle (Pre-IPO Equity)',
+    prizePool: 'Solana Breakpoint 2026 Ticket ($5,500 Value)',
+    deadline: 'October 1, 2026',
+    platform: 'Superteam Earn',
+    status: 'SUBMISSION_OPEN',
+    deliverableMatch: 'EquityCurve & Pre-IPO Tokenization Essay'
+  },
+  {
+    id: 'breakpoint-starter-pack',
+    name: 'Breakpoint London Starter Pack Visual',
+    prizePool: 'Solana Breakpoint 2026 Ticket ($5,500 Value)',
+    deadline: 'October 1, 2026',
+    platform: 'Superteam Earn',
+    status: 'SUBMISSION_OPEN',
+    deliverableMatch: 'Breakpoint London Infographic Graphic'
+  },
+  {
+    id: 'breakpoint-memorable-moment',
+    name: 'Share Most Memorable Breakpoint Moment on X',
+    prizePool: 'Solana Breakpoint 2026 Ticket ($5,500 Value)',
+    deadline: 'October 1, 2026',
+    platform: 'Superteam Earn',
+    status: 'SUBMISSION_OPEN',
+    deliverableMatch: 'Firedancer 1M TPS Story Thread'
+  },
   {
     id: 'colosseum-fair',
     name: "Colosseum Crypto World's Fair",

@@ -2,7 +2,7 @@ export interface TargetCompany {
   id: string;
   name: string;
   logo: string;
-  category: 'L1 Foundation & Core' | 'DeFi Protocol' | 'AI & Infrastructure' | 'Ecosystem Growth';
+  category: 'L1 Foundation & Core' | 'DeFi Protocol' | 'AI & Infrastructure' | 'Ecosystem Growth' | 'Solana Payments & DeFi' | 'Distributed Systems & Scaling';
   rolesHiring: string[];
   salaryRange: string;
   location: string;
